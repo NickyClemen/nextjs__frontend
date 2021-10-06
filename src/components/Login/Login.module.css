@@ -1,0 +1,145 @@
+.login__component {
+    background: url('https://cdn.alibrate.com/images/register/bg-login.png') no-repeat;
+    background-size: contain;
+    min-width: 100vw;
+    min-height: 100vh;
+}
+
+.header__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    height: 20rem;
+}
+
+.header__container img {
+    height: 5rem;
+    margin: 1rem;
+}
+
+.header__container p {
+    font-size: 1.7rem;
+    padding: 1rem;
+}
+
+.main__container {
+    min-height: calc(100vh - 20rem - 5rem);
+}
+
+.form__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #fff;
+    box-shadow: 1px 2px 23px -4px rgba(0,0,0,0.69);
+    -webkit-box-shadow: 1px 2px 23px -4px rgba(0,0,0,0.69);
+    -moz-box-shadow: 1px 2px 23px -4px rgba(0,0,0,0.69);
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 1.5rem;
+    min-height: 35rem;
+}
+
+.fieldset__login__container legend {
+    font-size: 1.5rem;
+    font-family: Raleway, sans-serif;
+    font-weight: bold;
+}
+
+.fieldset__login__container, .fieldset__social__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+    border: none;
+}
+
+.fieldset__login__container:first-child {
+    text-align: left;
+}
+
+.btn__group__container {
+    display: flex;
+    flex-direction: column;
+}
+
+.separator {
+    text-align: center;
+}
+
+.separator strong {
+    font-size: 1.5rem;
+}
+
+.separator p {
+    font-size: 1.5rem;
+}
+
+.inputClass[type=text], .inputClass[type=password], .inputClass[type=button] {
+    background: #F5F5F5;
+    padding: .5rem 1rem;
+    border-radius: .5rem;
+    border: none;
+    outline: none;
+    height: 3rem;
+    margin: .5rem;
+}
+
+.inputClass[type=password] {
+    background-image: url('../../../public/assets/img/eye-solid.svg');
+    background-size: 2rem;
+    background-position: 95%;
+    background-repeat: no-repeat;
+}
+
+.inputClass[type="submit"] {
+    background-color: #1c4865;
+    box-shadow: 0 3px 10px 0 rgb(27 72 101 / 47%);
+    color: #fff;
+    font-weight: bold;
+    height: 3rem;
+    margin: .5rem;
+    padding: .5rem 1rem;
+    border-radius: .5rem;
+}
+
+.inputClass[type="submit"]:is(.disabled) {
+    opacity: .4,
+}
+
+.inputClass[type=button] {
+    cursor: pointer;
+    box-shadow: -4px 2px 23px -8px rgba(0,0,0,0.69);
+}
+
+.inputClass[type=button]:is(.bnt__fb) {
+    background: #1778F2;
+    background-position: left;
+    background-image: url('../../../public/assets/img/facebook.svg');
+    background-repeat: no-repeat;
+    background-position: 33%;
+    color: #fff;
+    background-size: 2rem;
+    font-weight: bold;
+    z-index: 2;
+}
+
+.inputClass[type=button]:is(.bnt__apple) {
+    outline: none;
+    background: #000 url('../../../public/assets/img/apple-brands.svg') no-repeat left;
+    background-size: 2rem;
+    background-position: 10%;
+    color: #fff;
+    font-weight: bold;
+}
+
+.footer__container {
+    height: 5rem;
+}
+
+.footer__container p {
+    text-align: center;
+}
+

@@ -1,0 +1,113 @@
+.nav_list__ul,
+.footer__container__list {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+
+.nav_list__container,
+.footer__container__list_section {
+    padding: .5rem 0 .5rem 0;
+}
+
+.header__component,
+.footer__container {
+    min-height: 3rem;
+    background: #1c4865;
+}
+
+.nav_list__ul li,
+.footer__container__list li {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-size: 1.5rem;
+    padding: .5rem;
+}
+
+.input__search {
+    border: none;
+    border-radius: .5rem;
+    outline: none;
+    height: 2.5rem;
+}
+
+.input__search::placeholder {
+    padding-left: 1.5em;
+}
+
+.main__component {
+    min-height: calc(100vh - 3rem - 3rem);
+    max-height: 10rem;
+    margin: 1rem auto 1rem auto;
+    overflow: scroll;
+}
+
+.user_profile__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.user_profile__container,
+.user_profile__list {
+    margin: .5rem 0 .5rem 0;
+    padding: .5rem 0 .5rem 0;
+}
+
+.user_profile__info {
+    display: flex;
+}
+
+.user_profile__photo {
+    background-color: #000;
+    border-radius: 100%;
+    width: 5rem;
+    height: 5rem;
+    padding: .5rem;
+}
+
+.user_profile__btn_group {
+    display: flex;
+    align-items: center;
+}
+
+.user_profile__list {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+
+.btn__invitar__amigos,
+.btn__user_profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 1rem;
+    padding: .5rem;
+    height: 3rem;
+}
+
+.btn__user_profile small {
+    margin-left: 0.5rem;
+}
+
+.user_profile__list_item {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.user_profile__text {
+    margin-left: 1rem;
+    padding: .5rem;
+}
+
+.user_profile__text ul li {
+    list-style: none;
+}
+
+.libros__container {
+    margin: 2rem;
+}

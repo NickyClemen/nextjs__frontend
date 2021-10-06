@@ -1,0 +1,14 @@
+.card__container {
+    display: flex;
+    border: 1px solid #000;
+    border-radius: .5rem;
+}
+
+.card__img_portada {
+    height: 10rem;
+    object-fit: cover;
+}
+
+.libro_descrip__container {
+    margin-left: 1rem;
+}
