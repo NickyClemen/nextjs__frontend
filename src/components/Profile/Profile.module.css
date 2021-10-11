@@ -1,19 +1,16 @@
+.nav__component,
+.footer__container {
+    background-color: #1c4865;
+    padding: .5rem  .5rem 0;
+}
+
 .nav_list__ul,
 .footer__container__list {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     list-style: none;
-}
-
-.nav_list__container,
-.footer__container__list_section {
-    padding: .5rem 0 .5rem 0;
-}
-
-.header__component,
-.footer__container {
-    min-height: 3rem;
-    background: #1c4865;
+    padding-right: .5rem;
+    padding-left: .5rem;
 }
 
 .nav_list__ul li,
@@ -23,6 +20,34 @@
     color: #fff;
     font-size: 1.5rem;
     padding: .5rem;
+}
+
+.user_profile__container,
+.user_profile__list {
+    margin: .5rem 0 .5rem 0;
+    padding: .5rem 0 .5rem 0;
+}
+
+.btn__invitar__amigos,
+.btn__user_profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 1rem;
+    padding: .5rem;
+    height: 3rem;
+}
+
+.header__component {
+    min-height: 25rem;
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+}
+
+.nav__component {
+    min-height: 5rem;
 }
 
 .input__search {
@@ -36,24 +61,13 @@
     padding-left: 1.5em;
 }
 
-.main__component {
-    min-height: calc(100vh - 3rem - 3rem);
-    max-height: 10rem;
-    margin: 1rem auto 1rem auto;
-    overflow: scroll;
-}
-
 .user_profile__container {
     display: flex;
     align-items: center;
     justify-content: space-around;
 }
 
-.user_profile__container,
-.user_profile__list {
-    margin: .5rem 0 .5rem 0;
-    padding: .5rem 0 .5rem 0;
-}
+
 
 .user_profile__info {
     display: flex;
@@ -78,17 +92,6 @@
     list-style: none;
 }
 
-.btn__invitar__amigos,
-.btn__user_profile {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    border-radius: 1rem;
-    padding: .5rem;
-    height: 3rem;
-}
-
 .btn__user_profile small {
     margin-left: 0.5rem;
 }
@@ -108,6 +111,20 @@
     list-style: none;
 }
 
-.libros__container {
-    margin: 2rem;
+.main__component {
+    min-height: calc(100vh - 28.5rem);
+    max-height: 10rem;
+    padding: 1rem 0 1rem 0;
+    position: relative;
+    overflow: scroll;
 }
+
+.lista_libros__section {
+    margin: 0 2rem 0 2rem;
+}
+
+.footer__container {
+    min-height: 3rem;
+    padding: .5rem;
+}
+

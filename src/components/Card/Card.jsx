@@ -3,27 +3,25 @@ import Image from 'next/image';
 import { BsFillStarFill, BsThreeDotsVertical } from 'react-icons/bs';
 import { IoIosArrowDown } from 'react-icons/io';
 
-import portadaLibro from '../../../public/assets/img/de-dios-portada.png';
-
 import cardStyles from './Card.module.css';
 
-const Card = () => {
+const Card = ({ srcImage, genres, title, author, status }) => {
     return (
         <div className={ cardStyles.card__component }>
             <div className={ cardStyles.card__container }>
                 <section>
                     <Image
                         className={ cardStyles.card__img_portada }
-                        src={portadaLibro}
+                        src={srcImage}
                         alt=""
                     />
                 </section>
 
                 <section className={ cardStyles.libro_descrip__container }>
                     <div>
-                        <small>VIAJES</small>
-                        <h3>GUÍA COMPLETA DE NUEVA YORK</h3>
-                        <small>DE DIOS, JULIAN</small>
+                        <small>{genres}</small>
+                        <h3>{title}</h3>
+                        <small>{author}</small>
 
                         <BsThreeDotsVertical />
                     </div>
@@ -40,7 +38,7 @@ const Card = () => {
 
                     <div>
                         <button>
-                            <span>Leído</span><IoIosArrowDown />
+                            <span>{status}</span><IoIosArrowDown />
                         </button>
                     </div>
                 </section>
