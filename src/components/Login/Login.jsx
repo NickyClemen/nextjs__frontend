@@ -97,7 +97,7 @@ const Login = () => {
                             <input
                                 className={ `${ loginStyles.inputClass } ${ loginStyles.bnt__apple }` }
                                 type="button"
-                                value="Iniciar sesión son Apple"
+                                value="Iniciar sesión con Apple"
                             />
                         </div>
                     </fieldset>

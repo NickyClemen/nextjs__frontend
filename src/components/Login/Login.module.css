@@ -89,6 +89,7 @@
 
 .inputClass[type=password] {
     background-image: url('../../../public/assets/img/eye-solid.svg');
+    color: #fff;
     background-size: 2rem;
     background-position: 95%;
     background-repeat: no-repeat;
