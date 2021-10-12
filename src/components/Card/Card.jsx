@@ -1,3 +1,5 @@
+import React from 'react';
+
 import Image from 'next/image';
 
 import { BsFillStarFill, BsThreeDotsVertical } from 'react-icons/bs';
@@ -5,44 +7,56 @@ import { IoIosArrowDown } from 'react-icons/io';
 
 import cardStyles from './Card.module.css';
 
-const Card = ({ srcImage, genres, title, author, status }) => {
+const Card = ({ genres, title, author, imageSrc, status }) => {
     return (
         <div className={ cardStyles.card__component }>
-            <div className={ cardStyles.card__container }>
-                <section>
-                    <Image
-                        className={ cardStyles.card__img_portada }
-                        src={srcImage}
-                        alt=""
-                    />
-                </section>
+            <Image
+                width={ 100 }
+                height={ 150 }
+                src={ imageSrc }
+                alt={ title }
+            />
 
-                <section className={ cardStyles.libro_descrip__container }>
-                    <div>
-                        <small>{genres}</small>
-                        <h3>{title}</h3>
-                        <small>{author}</small>
+            <section className={ cardStyles.libro_descrip__container }>
+                <div className={ cardStyles.libro_informacion }>
+                    <ul className={ cardStyles.libro_descrip__list }>
+                        <li><small>{ genres.toUpperCase() }</small></li>
+                        <li><h3>{ title.toUpperCase() }</h3></li>
+                        <li><small>{ author.toUpperCase()}</small></li>
+                    </ul>
+                </div>
 
-                        <BsThreeDotsVertical />
-                    </div>
+                <div className={ cardStyles.rating__container }>
+                    <ul className={ cardStyles.rating__list }>
+                        <li>
+                            <div>
+                                <BsFillStarFill />
+                                <BsFillStarFill />
+                                <BsFillStarFill />
+                                <BsFillStarFill />
+                                <BsFillStarFill />
+                            </div>
+                        </li>
 
-                    <div>
-                        <BsFillStarFill />
-                        <BsFillStarFill />
-                        <BsFillStarFill />
-                        <BsFillStarFill />
-                        <BsFillStarFill />
+                        <li>
+                            <small>Calificación general: <strong>10,0</strong></small>
+                        </li>
 
-                        <small>Calificación general: <strong>10,0</strong></small>
-                    </div>
+                        <li>
+                            <button className={ cardStyles.btn_status_libro }>
+                                <small>{ status }</small>
+                                <span><IoIosArrowDown /></span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
 
-                    <div>
-                        <button>
-                            <span>{status}</span><IoIosArrowDown />
-                        </button>
-                    </div>
-                </section>
-            </div>
+                <div className={ cardStyles.puntos }>
+                    <BsThreeDotsVertical />
+                </div>
+            </section>
+
+
         </div>
     );
 };

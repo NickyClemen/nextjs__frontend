@@ -40,7 +40,7 @@
 }
 
 .header__component {
-    min-height: 25rem;
+    min-height: 20rem;
     position: sticky;
     top: 0;
     background-color: #fff;
@@ -67,8 +67,6 @@
     justify-content: space-around;
 }
 
-
-
 .user_profile__info {
     display: flex;
 }
@@ -92,6 +90,24 @@
     list-style: none;
 }
 
+.user_profile__list_container {
+    border-top: .1rem solid rgb(226, 225, 225);
+    border-bottom: .1rem solid rgb(226, 225, 225);
+}
+
+.btn_user_profile__list {
+    background-color: #fff;
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.user_profile__list_li {
+    /* border-bottom: .3rem solid #1c4865; */
+    padding: .5rem;
+}
+
 .btn__user_profile small {
     margin-left: 0.5rem;
 }
@@ -112,15 +128,12 @@
 }
 
 .main__component {
-    min-height: calc(100vh - 28.5rem);
-    max-height: 10rem;
-    padding: 1rem 0 1rem 0;
     position: relative;
+    min-height: calc(100vh - 28rem);
+    max-height: 10rem;
+    padding: 2rem;
+    background-color: rgb(239, 239, 239);
     overflow: scroll;
-}
-
-.lista_libros__section {
-    margin: 0 2rem 0 2rem;
 }
 
 .footer__container {

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 import { BsPen } from 'react-icons/bs'
 import { HiOutlineBookOpen } from 'react-icons/hi';
@@ -14,19 +14,13 @@ import {
 } from 'react-icons/io5';
 
 import Card from '../Card/Card';
-import axios from 'axios';
 
-import srcBromaInfinita from '../../../public/assets/img/portadas/broma_infinita.jpg';
 import stylesProfile from './Profile.module.css';
 
-const Profile = () => {
-    const [bookReaded, setBookReaded] = useState({});
-
-    useEffect(() => {
-        axios.get('/api/books')
-            .then(response => setBookReaded(response.data[0].bookReaded))
-            .catch(err => console.log(err.message))
-    });
+const Profile = ({ userProfile, books }) => {
+    const [bookReaded, bookReading, bookToRead, abandonedBook] = books;
+    const [book, setBook] = useState(bookReaded);
+    const [status, setStatus] = useState('Leído');
 
     return (
         <div className={ stylesProfile.user_profile__component }>
@@ -65,11 +59,11 @@ const Profile = () => {
                             <div className={ stylesProfile.user_profile__text }>
                                 <ul>
                                     <li>
-                                        <strong>clemenicky</strong>
+                                        <strong>{ userProfile.username }</strong>
                                     </li>
 
                                     <li>
-                                        <small>30 años</small>
+                                        <small>{ userProfile.age } años</small>
                                     </li>
 
                                     <li>
@@ -141,31 +135,71 @@ const Profile = () => {
                         </ul>
                     </div>
 
-                    <div>
+                    <div className={ stylesProfile.user_profile__list_container }>
                         <ul className={ stylesProfile.user_profile__list }>
-                            <li><p>Leídos</p></li>
-                            <li><p>Leyendo</p></li>
-                            <li><p>Por leer</p></li>
-                            <li><p>Abandonado</p></li>
+                            <li className={ stylesProfile.user_profile__list_li }>
+                                <button
+                                    type="button"
+                                    className={ stylesProfile.btn_user_profile__list }
+                                    onClick={ e => {
+                                        setBook(bookReaded)
+                                        setStatus('Leído')
+                                    } }
+                                >Leídos ({ bookReaded.length })</button>
+                            </li>
+
+                            <li className={ stylesProfile.user_profile__list_li }>
+                                <button
+                                    type="button"
+                                    className={ stylesProfile.btn_user_profile__list }
+                                    onClick={ e => {
+                                        setBook(bookReading)
+                                        setStatus('Leyendo')
+                                    } }
+                                >Leyendo ({ bookReading.length })</button>
+                            </li>
+
+                            <li className={ stylesProfile.user_profile__list_li }>
+                                <button
+                                    type="button"
+                                    className={ stylesProfile.btn_user_profile__list }
+                                    onClick={ e => {
+                                        setBook(bookToRead)
+                                        setStatus('Por leer')
+                                    } }
+                                >Por leer ({ bookToRead.length })</button>
+                            </li>
+
+                            <li className={ stylesProfile.user_profile__list_li }>
+                                <button
+                                    type="button"
+                                    className={ stylesProfile.btn_user_profile__list }
+                                    onClick={ e => {
+                                        setBook(abandonedBook)
+                                        setStatus('Abandonado')
+                                    } }
+                                >Abandonados ({ abandonedBook.length })</button>
+                            </li>
                         </ul>
                     </div>
                 </div>
             </header>
 
             <main className={ stylesProfile.main__component }>
-                <div className={ stylesProfile.lista_libros__section }>
-                    <div className={ stylesProfile.lista_libros__container }>
-                        {
+                {
+                    book.map(
+                        (book, i) => (
                             <Card
-                                srcImage={srcBromaInfinita}
-                                genres={bookReaded.genres}
-                                title={bookReaded.title}
-                                author={bookReaded.author}
-                                status={bookReaded.genres}
+                                key={ i }
+                                genres={ book.genres }
+                                title={ book.title }
+                                author={ book.author }
+                                imageSrc={ book.image }
+                                status={status}
                             />
-                        }
-                    </div>
-                </div>
+                        )
+                    )
+                }
             </main>
 
             <footer className={ stylesProfile.footer__container }>

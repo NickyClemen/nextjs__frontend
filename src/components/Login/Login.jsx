@@ -1,6 +1,4 @@
-import {
-    useState,
-    useEffect,
+import React, {
     useRef
 } from 'react';
 
